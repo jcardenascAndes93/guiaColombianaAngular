@@ -16,10 +16,10 @@ export class SignupComponent implements OnInit {
     this.register = {
       username: '',
       password: '',
-      //name: '',
-      //last_name: '',
+      first_name: '',
+      last_name: '',
       email: '',
-      //phone: '',
+      phone: '',
     };
   }
 
