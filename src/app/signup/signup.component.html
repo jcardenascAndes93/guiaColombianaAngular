@@ -1,0 +1,39 @@
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+</head>
+<div id="login">
+    <form name='form-login'>
+        <h3>Registro</h3>
+        <span class="fontawesome-user"></span>
+        <input type="text" name="user" placeholder="Username" [(ngModel)]="register.username">
+
+        <span class="fontawesome-lock"></span>
+        <input type="password" name="pass" placeholder="Password" [(ngModel)]="register.password">
+        <!--
+        <span></span>
+        <input type="text" id="name" placeholder="Nombres" [(ngModel)]=r egister.name>
+
+        <span></span>
+        <input type="text" id="lastname" placeholder="Apellidos" [(ngModel)]=r egister.last_name>
+            -->
+        <span></span>
+        <input type="text" name="email" placeholder="Email" [(ngModel)]="register.email">
+        <!--
+        <span></span>
+        <input type="text" id="phone" placeholder="Teléfono" [(ngModel)]=r egister.phone>-->
+
+        <span></span>
+        <span></span>
+        <button (click)="registerUser()">Registrar</button>
+        <br>
+        <span></span>
+        <input type="submit" name="" value="Cancelar">
+
+    </form>
+</div>
