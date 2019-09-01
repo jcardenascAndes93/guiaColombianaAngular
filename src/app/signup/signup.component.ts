@@ -29,7 +29,10 @@ export class SignupComponent implements OnInit {
       response => {
         alert('User ' + this.register.username + ' register success')
       },
-      error => console.log('ERROR: ', error)
+      error => {
+        console.log('ERROR: ', error);
+        alert('No fue posible crear el usuario. Username y Password son obligatorios')
+      }
     );
   }
 
