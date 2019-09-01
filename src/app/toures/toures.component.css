@@ -111,3 +111,8 @@ main{
 [class*="zocial-"]:before {
     font-family: 'zocial', sans-serif;
   }
+
+#listado{
+    margin-top: 20px;
+    margin-left: 50px;
+}
