@@ -11,10 +11,10 @@
     <form name='form-login'>
         <h3>Registro</h3>
         <span class="fontawesome-user"></span>
-        <input type="text" name="user" placeholder="Username" [(ngModel)]="register.username">
+        <input type="text" name="user" placeholder="Username" [(ngModel)]="register.username" required>
 
         <span class="fontawesome-lock"></span>
-        <input type="password" name="pass" placeholder="Password" [(ngModel)]="register.password">
+        <input type="password" name="pass" placeholder="Password" [(ngModel)]="register.password" required>
 
         <span></span>
         <input type="text" name="name" placeholder="Nombres" [(ngModel)]="register.first_name">
@@ -23,17 +23,19 @@
         <input type="text" name="lastname" placeholder="Apellidos" [(ngModel)]="register.last_name">
 
         <span></span>
-        <input type="text" name="email" placeholder="Email" [(ngModel)]="register.email">
+        <input type="text" name="email" placeholder="Email" [(ngModel)]="register.email" required>
 
         <span></span>
         <input type="text" name="phone" placeholder="Teléfono" [(ngModel)]="register.phone">
 
         <span></span>
         <span></span>
-        <button (click)="registerUser()">Registrar</button>
-        <br>
-        <span></span>
-        <input type="submit" name="" value="Cancelar">
+        <a routerLink="/login">
+            <button id="register" type="submit" (click)="registerUser()">Registrar</button>
+        </a>
+        <a routerLink="">
+            <button id="cancel" type="submit">Cancelar</button>
+        </a>
 
     </form>
 </div>

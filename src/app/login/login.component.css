@@ -84,20 +84,44 @@ after {
     height: 50px;
 }
 
-#login form input[type="submit"] {
+#login form button[id="register"] {
     display: block;
     background: white;
     border: 1px solid #5cd2e2;
     margin: 0 auto;
-    width: 80%;
+    margin-bottom: 5px;
+    width: 70%;
     height: 40px;
     border-radius: 8px;
     color: #5cd2e2;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.5s ease-in-out;
+    font-weight: bold
 }
 
-#login form input[type="submit"]:hover {
+#login form button[id="register"]:hover {
     background: #5cd2e2;
     color: white;
+    font-weight: bold
+}
+
+#login form button[id="cancel"] {
+    display: block;
+    background: white;
+    border: 1px solid #e03232;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    width: 70%;
+    height: 40px;
+    border-radius: 8px;
+    color: #e03232;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+    font-weight: bold
+}
+
+#login form button[id="cancel"]:hover {
+    background: #e03232;
+    color: white;
+    font-weight: bold
 }

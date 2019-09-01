@@ -11,12 +11,18 @@
     <form name='form-login'>
         <h3>Login</h3>
         <span class="fontawesome-user"></span>
-        <input type="text" id="user" placeholder="Username">
+        <input type="text" name="user" placeholder="Username" [(ngModel)]="login.username" required>
 
         <span class="fontawesome-lock"></span>
-        <input type="password" id="pass" placeholder="Password">
+        <input type="password" name="pass" placeholder="Password" [(ngModel)]="login.password" required>
 
-        <input type="submit" value="Login" text-align="center">
+
+        <a routerLink="">
+            <button id="register" type="submit" (click)="loginUser()">Login</button>
+        </a>
+        <a routerLink="">
+            <button id="cancel" type="submit">Cancelar</button>
+        </a>
 
     </form>
 </div>

@@ -8,7 +8,12 @@ export class UsersService {
 
   // The createUser method using a POST request
   createUser(userData): Observable<any> {
-    return this.http.post('https://guia-colombiana.herokuapp.com/accounts/users/', userData);
+    return this.http.post('http://127.0.0.1:8000/accounts/users/', userData);
+  }
+
+  // Login the user method using a POST request
+  loginUser(userData): Observable<any> {
+    return this.http.post('http://127.0.0.1:8000/accounts/auth/', userData);
   }
 }
 
