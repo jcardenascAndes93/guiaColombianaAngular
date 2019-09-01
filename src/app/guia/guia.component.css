@@ -105,8 +105,44 @@ main #categorias{
 
 .responsive {
     width: 100%;
-    max-width:390px;
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width:330px;
     height: 100%;
     max-height:280px;
   }
 
+#redesSociales{
+
+    margin-left: 20px;
+}
+
+/*Grid Categorias*/
+
+.grid-categorias {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+    padding: 10px;
+  }
+  .grid-categoria {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 390px 390px;
+    grid-template-rows: 280px;
+    grid-template-areas: "foto-guia categorias";
+  }
+  
+  .foto-guia { grid-area: foto-guia; }
+  
+  .categorias { 
+      grid-area: categorias;
+      margin-top: 35px;
+  }
