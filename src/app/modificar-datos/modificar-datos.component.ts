@@ -14,8 +14,6 @@ export class ModificarDatosComponent implements OnInit {
   ngOnInit() {
     // Initialize register object
     this.user = {
-      username: '',
-      password: '',
       name: '',
       last_name: '',
       email: '',
@@ -24,8 +22,8 @@ export class ModificarDatosComponent implements OnInit {
   }
 
   // Register the user using the createUser service
-  registerUser() {
-    this.userService.createUser(this.user).subscribe(
+  updateUser() {
+    this.userService.updateUser(this.user).subscribe(
       response => {
         alert('User ' + this.user.username + ' upgrade success')
       },

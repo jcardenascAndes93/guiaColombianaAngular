@@ -10,5 +10,9 @@ export class UsersService {
   createUser(userData): Observable<any> {
     return this.http.post('https://guia-colombiana.herokuapp.com/accounts/users/', userData);
   }
+
+  updateUser(userData): Observable<any> {
+    return this.http.put('https://guia-colombiana.herokuapp.com/accounts/users/', userData);
+  }
 }
 
