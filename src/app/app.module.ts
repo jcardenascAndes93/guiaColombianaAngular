@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
+import { ModificarDatosComponent } from './modificar-datos/modificar-datos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +14,7 @@ import { GuiasHomeComponent } from './guias-home/guias-home.component';
 
 @NgModule({
   declarations: [
+    ModificarDatosComponent,
     AppComponent,
     LoginComponent,
     SignupComponent,

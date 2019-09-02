@@ -1,0 +1,40 @@
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+</head>
+
+<div id="modificarDatos">
+  <form name='form-modificar'>
+    <h3>Perfil</h3>
+    <span class="fontawesome-user"></span>
+    <input type="text" name="user" placeholder="Username" [(ngModel)]="user.username">
+
+    <span class="fontawesome-lock"></span>
+    <input type="password" name="pass" placeholder="Password" [(ngModel)]="user.password">
+
+    <span></span>
+    <input type="text" id="name" placeholder="Nombres" [(ngModel)]=user.name>
+
+    <span></span>
+    <input type="text" id="lastname" placeholder="Apellidos" [(ngModel)]=user.last_name>
+
+    <span></span>
+    <input type="text" name="email" placeholder="Email" [(ngModel)]="user.email">
+
+    <span></span>
+    <input type="text" id="phone" placeholder="Teléfono" [(ngModel)]=user.phone>
+
+    <span></span>
+    <span></span>
+    <button (click)="registerUser()">Actualizar datos</button>
+    <br>
+    <span></span>
+    <input type="submit" name="" value="Cancelar">
+
+  </form>
+</div>
