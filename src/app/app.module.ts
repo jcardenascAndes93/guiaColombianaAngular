@@ -12,9 +12,11 @@ import { BarraSuperiorComponent } from './barra-superior/barra-superior.componen
 import { GuiaComponent } from './guia/guia.component';
 import { TouresComponent } from './toures/toures.component';
 import { GuiasHomeComponent } from './guias-home/guias-home.component';
+import {ModificarDatosComponent} from './updateUser/modificar-datos.component';
 
 @NgModule({
   declarations: [
+    ModificarDatosComponent,
     AppComponent,
     LoginComponent,
     SignupComponent,
