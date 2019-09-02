@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', component: GuiasHomeComponent},
   {path: 'guiasdetalle/:id', component: GuiaComponent},
-  {path: 'tours/:id', component: TouresComponent}
+  {path: 'tours/:id', component: TouresComponent},
   {path: 'update', component: ModificarDatosComponent},
 
 ];
