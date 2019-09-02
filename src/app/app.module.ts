@@ -11,6 +11,7 @@ import { SignupComponent } from './signup/signup.component';
 import { BarraSuperiorComponent } from './barra-superior/barra-superior.component';
 import { GuiaComponent } from './guia/guia.component';
 import { TouresComponent } from './toures/toures.component';
+import { GuiasHomeComponent } from './guias-home/guias-home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TouresComponent } from './toures/toures.component';
     SignupComponent,
     BarraSuperiorComponent,
     GuiaComponent,
-    TouresComponent
+    TouresComponent,
+    GuiasHomeComponent
   ],
   imports: [
     BrowserModule,
