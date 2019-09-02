@@ -13,16 +13,15 @@
     <h3>Actualizacion de Datos</h3>
 
     <span></span>
-    <input type="text" id="name" placeholder="Nombres" [(ngModel)]="user.first_name" name="first">
+    <input type="text" id="name" placeholder="Nombres" [(ngModel)]="userUpdating.first_name"[ngModelOptions]="{standalone: true}" >
 
     <span></span>
-    <input type="text" id="lastname" placeholder="Apellidos" [(ngModel)]="user.last_name">
+    <input type="text" id="lastname" placeholder="Apellidos" [(ngModel)]="userUpdating.last_name" [ngModelOptions]="{standalone: true}" >
+
+
 
     <span></span>
-    <input type="text" name="email" placeholder="Email" [(ngModel)]="user.email">
-
-    <span></span>
-    <input type="text" id="phone" placeholder="Teléfono" [(ngModel)]="user.phone">
+    <input type="text" id="phone" placeholder="Teléfono" [(ngModel)]="userUpdating.phone" [ngModelOptions]="{standalone: true}">
 
     <span></span>
     <span></span>

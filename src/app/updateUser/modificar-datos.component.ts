@@ -9,26 +9,23 @@ import {UsersService} from '../users.service';
 })
 export class ModificarDatosComponent implements OnInit {
 
-  user;
+  userUpdating;
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
     // Initialize register object
-    this.user = {
-      username: 'paola',
-      password: 'paola',
+    this.userUpdating = {
       first_name: '',
       last_name: '',
-      email: '',
       phone: '',
     };
   }
 
   // Register the user using the createUser service
   updateUser() {
-    this.userService.updateUser(this.user).subscribe(
+    this.userService.updateUser(this.userUpdating).subscribe(
       response => {
-        alert('User ' + this.user.username + ' upgrade success')
+        alert('User ' + this.userUpdating.first_name+ ' upgrade success')
       },
       error => console.log('ERROR: ', error)
     );
