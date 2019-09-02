@@ -1,8 +1,25 @@
-<h2>Imágenes</h2>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<app-barra-superior></app-barra-superior>
+<h2>Mi Guia Colombiana</h2>
 <ul class="images">
       <li *ngFor="let guia of guias"> 
          <div>
+              <textarea>nb</textarea>
             	<img src="{{'http://localhost:8000/' + guia.photo}}" width="30%" height="30%" />
         </div>
     </li>
 </ul>
+   <div class="site-section border-bottom">
+      <div class="container">
+        <div class="row text-center justify-content-center mb-5">
+          <div class="col-md-7 aos-init aos-animate" data-aos="fade-up">
+            <h2>Guias</h2>
+          </div>
+        </div>
+
+<table style="width:100%">
+  <tr *ngFor="let guia of guias">
+    <th>{{guia.full_name}}</th>
+    <th>	<img src="{{'http://localhost:8000/' + guia.photo}}" width="60px" height="60px" /></th>
+    <th> <a [routerLink]="['/guia/',guia.id]">test</a></th>
+</table>

@@ -15,7 +15,7 @@ export class GuiaService {
 
   getGuias(): Observable<Guia[]> {
     this.guias = [];
-    this.httpClient.get('https://guia-colombiana.herokuapp.com/guias').subscribe((data: Array<any>) => {
+    this.httpClient.get('http://localhost:8000/guicolapp/guias').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let guia1 = new Guia();
         guia1.id = dataItem.pk;
