@@ -1,42 +1,40 @@
 <body>
-        <section id=contenedor>
-                
-                <header></header>
-                <section id=info-toures>
-                        <div id=Nombre-tour align="center">
-                                <h3 >Nombre del tour: {{tour.nombreTour}} </h3>
-                        </div>
-                        <div id=Precio align="center">
-                                <h3 >Costo $USD: {{tour.precioTour}} </h3>
-                        </div>
-                </section>
-                <section id=separador1></section>
-                <main>
-                        <div class="grid-container">
-                        <div class="Img-mapa">
-                                <img src="https://bogota.gov.co/sites/default/files/u3883/recorrido_metro.jpg" alt="un gia." class="responsive">
-                        </div>
-                        <div class="Info-tour">
-                                 <div class="Lisato-puntos">
-                                         <h4>Listado de lugares a visitar</h4>
-                                         <div id = listado>
-                                                <ol>
-                                                <li>Lugar 1.</li>
-                                                <li>Lugar 2.</li>
-                                                <li>Lugar 3.</li>
-                                                </ol> 
-                                         </div>         
-                                 </div>
-                                        <div class="Email" align="center">
-                                                <a href="#" class="email-boton zocial-email"> Enviame un email.</a>
-                                        </div>
-                                </div>
-                        </div>
-                </main>
-                <section id=separador1></section>
+    <section id=contenedor *ngFor="let tour of tours">
 
-                
-        </section> <!-- contenedor-->
- 
+        <header></header>
+        <section id=info-toures>
+
+            <div id=Nombre-tour align="center">
+                <h3>Nombre del tour: {{tour.name}} </h3>
+            </div>
+            <div id=Precio align="center">
+                <h3>Costo: {{tour.price}} </h3>
+            </div>
+        </section>
+        <section id=separador1></section>
+        <main>
+            <div class="grid-container">
+                <div class="Img-mapa">
+                    <img src="https://bogota.gov.co/sites/default/files/u3883/recorrido_metro.jpg" alt="un gia." class="responsive">
+                </div>
+                <div class="Info-tour">
+                    <div class="Lisato-puntos">
+                        <h4>Listado de lugares a visitar</h4>
+                        <div id=listado *ngFor="let place of tours.places">
+                            <ol>
+                                <li>{{place}}</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <section id=separador1></section>
+
+
+    </section>
+    <!-- contenedor-->
+
 
 </body>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Tour} from '../tour';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GuiaService } from '../guia.service';
+import { Guia } from '../Guia';
 
 @Component({
   selector: 'app-toures',
@@ -7,15 +9,22 @@ import {Tour} from '../tour';
   styleUrls: ['./toures.component.css']
 })
 export class TouresComponent implements OnInit {
-  
+  @Input() guia: Guia;
+  tours = [];
 
-  tour: Tour = {
-    nombreTour: 'Casco Viejo',
-    precioTour: 60
-  }
-  constructor() { }
+  constructor(
+    private guiaService: GuiaService,
+    private route: ActivatedRoute,
+    
+  ) { }
 
   ngOnInit() {
+    this.getTours();
+  }
+  getTours(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.guiaService.getTours(id)
+      .subscribe(tours => this.tours = tours);
   }
 
 }

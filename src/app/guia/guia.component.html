@@ -1,38 +1,37 @@
-
 <body>
-        <section id=contenedor>
+    <section id=contenedor>
 
-                <header></header>
-                <section id=infoguia>
-                        <div align="center">
-                                <h3 >{{guia.full_name}}.</h3>
-                                <p>{{guia.frase}}.</p>
-                        </div>
+        <header></header>
+        <section id=infoguia>
+            <div align="center">
+                <h3>{{guia.full_name}}.</h3>
+                <p>{{guia.frase}}.</p>
+            </div>
 
-                </section>
-                <section id=separador1></section>
-                <main>
-                        <div class="grid-container">
-                                <div class="foto-guia">
-                                        <img src="{{'http://localhost:8000/' + guia.photo}}" alt="un gia." class="responsive">
-                                </div>
-                                <div class="categorias">
-                                        <div class="grid-categorias">
-                                                <div class="grid-categoria"><input type="checkbox"> Hitorico<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Romantico<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Zonas Verdes <br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Bares<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Rumba<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Caminata<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Alrededores<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Compras<br></div>
-                                                <div class="grid-categoria"><input type="checkbox"> Museos<br></div>
-                                        </div>
+        </section>
+        <section id=separador1></section>
+        <main>
+            <div class="grid-container">
+                <div class="foto-guia">
+                    <img src="{{'http://localhost:8000/' + guia.photo}}" alt="un gia." class="responsive">
+                </div>
+                <div class="categorias">
+                    <div class="grid-categorias">
+                        <div class="grid-categoria"><input type="checkbox"> Hitorico<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Romantico<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Zonas Verdes <br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Bares<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Rumba<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Caminata<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Alrededores<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Compras<br></div>
+                        <div class="grid-categoria"><input type="checkbox"> Museos<br></div>
+                    </div>
 
-                                </div>
-                        </div>
+                </div>
+            </div>
 
-        <!--
+            <!--
 <article id=imagen>
                                 <img src="https://previews.123rf.com/images/soloway/soloway1804/soloway180400037/99708989-smiling-backpakcer-traveler-take-selfie-photo-on-ocean-coast.jpg" alt="un gia." class="responsive">
                     </article>
@@ -52,29 +51,30 @@
 
         -->
 
-                </main>
-                <section id=separador1></section>
-                <section id=redes>
-                        <div class="grid-redes">
-                                <div class="redes-sociales" id=redesSociales>
-                                        <h4>Mis redes sociales.</h4>
-                                        <div id=Botones-redes>
-                                                <ul>
-                                                        <li class="brandico-facebook-rect"> {{guia.facebookGuia}}</li>
-                                                        <li class="brandico-instagram"> {{guia.instagramGuia}}</li>
-                                                        <li class="brandico-twitter-bird"> {{guia.twitterGuia}}</li>
-                                                </ul>
-                                        </div>
-                                </div>
-                                <div class="Mis-tours" align="center">
-                                        <a href="#" class="mistours-boton fontawesome-suitcase"> Mis toures</a>
-                                </div>
-                        </div>
-                </section>
+        </main>
+        <section id=separador1></section>
+        <section id=redes>
+            <div class="grid-redes">
+                <div class="redes-sociales" id=redesSociales>
+                    <h4>Mis redes sociales.</h4>
+                    <div id=Botones-redes>
+                        <ul>
+                            <li class="brandico-facebook-rect"> {{guia.facebookGuia}}</li>
+                            <li class="brandico-instagram"> {{guia.instagramGuia}}</li>
+                            <li class="brandico-twitter-bird"> {{guia.twitterGuia}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Mis-tours" align="center">
+                    <a [routerLink]="['/tours/',guia.id]" class="mistours-boton fontawesome-suitcase"> Mis tours</a>
+
+                </div>
+            </div>
+        </section>
 
 
-            </section> <!-- contenedor-->
+    </section>
+    <!-- contenedor-->
 
 
 </body>
-
