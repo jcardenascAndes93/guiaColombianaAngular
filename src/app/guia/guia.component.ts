@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {GuiaClass} from '../guia-class';
+import {Component, Input, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {GuiaService} from '../guia.service';
+import {Guia} from '../Guia';
 
 @Component({
   selector: 'app-guia',
@@ -8,18 +11,25 @@ import {GuiaClass} from '../guia-class';
 })
 export class GuiaComponent implements OnInit {
 
-  guia: GuiaClass = {
-    nombreGuia: 'Jose Perez',
-    fraseGuia:'Que linda es la vida',
-    facebookGuia: 'JosePerez77',
-    instagramGuia:'@JosePerez77',
-    twitterGuia:'@JosePerez77',
+@Input() guia: Guia;
 
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private guiaService: GuiaService,
+    private location: Location
+  ) { }
 
-  constructor() { }
+ ngOnInit(): void {
+  this.getGuia();
+}
 
-  ngOnInit() {
-  }
+getGuia(): void {
+  const id = +this.route.snapshot.paramMap.get('id');
+  this.guiaService.getGuia(id)
+    .subscribe(guia => this.guia = guia);
+}
 
+goBack(): void {
+   this.location.back();
+}
 }
