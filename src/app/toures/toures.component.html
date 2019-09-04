@@ -1,42 +1,33 @@
-<body>
-    <section id=contenedor *ngFor="let tour of tours">
-
-        <header></header>
-        <section id=info-toures>
-
-            <div id=Nombre-tour align="center">
-                <h3>Nombre del tour: {{tour.name}} </h3>
+<app-header></app-header>
+<section class="hotel_list section_padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6">
+        <div class="section_tittle text-center">
+          <h2>Bienvenido a Mis Toures</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let tour of tours" class="col-lg-4 col-sm-6" >
+        <div class="single_ihotel_list">
+          <img src="assets/img/ind/industries_1.png" alt="">
+          <div class="hotel_text_iner">
+            <h3> <a href="#"> {{tour.name}}</a></h3>
+            <div class="place_review">
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href="#"><i class="fas fa-star"></i></a>
+              <a href="#"><i class="fas fa-star"></i></a>
             </div>
-            <div id=Precio align="center">
-                <h3>Costo: {{tour.price}} </h3>
-            </div>
-        </section>
-        <section id=separador1></section>
-        <main>
-            <div class="grid-container">
-                <div class="Img-mapa">
-                    <img src="https://bogota.gov.co/sites/default/files/u3883/recorrido_metro.jpg" alt="un gia." class="responsive">
-                </div>
-                <div class="Info-tour">
-                    <div class="Lisato-puntos">
-                        <h4>Listado de lugares a visitar</h4>
-                        <div id=listado>
-                            <ol>
-                                <li>Museo del Oro</li>
-                                <li>La candelaria</li>
-                                <li>Chorro de Quevedo</li>
-                            </ol>
-                        </div>
-                    </div>
+            <p>London, United Kingdom</p>
+            <h5>From <span>${{tour.price}} COP</span></h5>
+          </div>
+        </div>
+      </div>
 
-                </div>
-            </div>
-        </main>
-        <section id=separador1></section>
-
-
-    </section>
-    <!-- contenedor-->
-
-
-</body>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
