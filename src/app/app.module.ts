@@ -13,6 +13,8 @@ import { GuiaComponent } from './guia/guia.component';
 import { TouresComponent } from './toures/toures.component';
 import { GuiasHomeComponent } from './guias-home/guias-home.component';
 import {ModificarDatosComponent} from './updateUser/modificar-datos.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {ModificarDatosComponent} from './updateUser/modificar-datos.component';
     BarraSuperiorComponent,
     GuiaComponent,
     TouresComponent,
-    GuiasHomeComponent
+    GuiasHomeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
