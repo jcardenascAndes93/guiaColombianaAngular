@@ -19,8 +19,12 @@ export class UsersService {
   }
 
   updateUser(userData): Observable<any> {
+<<<<<<< HEAD
     return this.http.patch('http://127.0.0.1:8000/accounts/users/' + localStorage.getItem('userid'), userData);
     //return this.http.put('https://guia-colombiana.herokuapp.com/accounts/users/1/', userData);
+=======
+    return this.http.put('https://guia-colombiana.herokuapp.com/accounts/modify-accounts/1', userData);
+>>>>>>> 1a7a338dcca24c7792fa5102b328caa4f24a8d6a
   }
 }
 

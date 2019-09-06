@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
 
 </head>
+
 <div id="login">
     <form name='form-login'>
         <h3>Actualizar datos</h3>
         <span></span>
-        <input type="text" name="name" placeholder="Nombres" [(ngModel)]="user.first_name">
+        <input type="text" name="name" placeholder="Nombres" [(ngModel)]="userUpdating.first_name">
 
         <span></span>
-        <input type="text" name="lastname" placeholder="Apellidos" [(ngModel)]="user.last_name">
+        <input type="text" name="lastname" placeholder="Apellidos" [(ngModel)]="userUpdating.last_name">
 
         <span></span>
-        <input type="text" name="email" placeholder="Email" [(ngModel)]="user.email" required>
+        <input type="text" name="email" placeholder="Email" [(ngModel)]="userUpdating.email" required>
 
         <span></span>
-        <input type="text" name="phone" placeholder="Teléfono" [(ngModel)]="user.phone">
+        <input type="text" name="phone" placeholder="Teléfono" [(ngModel)]="userUpdating.phone">
 
         <span></span>
         <span></span>

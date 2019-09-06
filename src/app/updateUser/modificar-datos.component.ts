@@ -9,24 +9,26 @@ import { UsersService } from '../users.service';
 })
 export class ModificarDatosComponent implements OnInit {
 
-  user;
+  userUpdating;
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
-    // Initialize user object
-    this.user = {
+
+    // Initialize userUpdating object
+    this.userUpdating = {
       first_name: JSON.parse(localStorage.getItem('userfname')),
       last_name: JSON.parse(localStorage.getItem('userlname')),
       email: JSON.parse(localStorage.getItem('useremail')),
       phone: JSON.parse(localStorage.getItem('userphone')),
+
     };
   }
 
   // Update the user using the createUser service
   updateUser() {
-    this.userService.updateUser(this.user).subscribe(
+    this.userService.updateUser(this.userUpdating).subscribe(
       response => {
-        alert('User ' + this.user.username + ' upgrade success')
+        alert('User ' + this.userUpdating.first_name+ ' upgrade success')
       },
       error => console.log('ERROR: ', error)
     );

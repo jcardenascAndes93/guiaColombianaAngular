@@ -1,80 +1,37 @@
-<body>
-    <section id=contenedor>
+<app-header></app-header>
+<section class="about_us section_padding">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="about_img">
+          <img src="assets/img/about_img.png" alt="#">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="about_text">
+          <h5>{{guia.full_name}}</h5>
+          <h2>{{guia.frase}}.</h2>
+          <p>Facebook: {{guia.facebook}}</p>
+          <p>Instagram: {{guia.instagram}}</p>
+          <p>Twitter: {{guia.twitter}}</p>
+          <br/>
+          <button [routerLink]="['/tours/',guia.id]" type="button" class="btn btn-outline-warning">Ver tours</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <header></header>
-        <section id=infoguia>
-            <div align="center">
-                <h3>{{guia.full_name}}.</h3>
-                <p>{{guia.frase}}.</p>
-            </div>
+<app-footer></app-footer>
+<!-- about us css end-->
+<!--top place start-->
 
-        </section>
-        <section id=separador1></section>
-        <main>
-            <div class="grid-container">
-                <div class="foto-guia">
-                    <img src="{{'http://localhost:8000/' + guia.photo}}" alt="un gia." class="responsive">
-                </div>
-                <div class="categorias">
-                    <div class="grid-categorias">
-                        <div class="grid-categoria"><input type="checkbox"> Hitorico<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Romantico<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Zonas Verdes <br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Bares<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Rumba<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Caminata<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Alrededores<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Compras<br></div>
-                        <div class="grid-categoria"><input type="checkbox"> Museos<br></div>
-                    </div>
+<!--top place end-->
+<!--::industries start::-->
 
-                </div>
-            </div>
+<!--::industries end::-->
+<!--top place start-->
 
-            <!--
-<article id=imagen>
-                                <img src="https://previews.123rf.com/images/soloway/soloway1804/soloway180400037/99708989-smiling-backpakcer-traveler-take-selfie-photo-on-ocean-coast.jpg" alt="un gia." class="responsive">
-                    </article>
-                    <article id=categorias>
-                        <div class="grid-categorias">
-                                <div class="grid-categoria"><input type="checkbox"> Hitorico<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Romantico<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Zonas Verdes <br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Bares<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Rumba<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Caminata<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Alrededores<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Compras<br></div>
-                                <div class="grid-categoria"><input type="checkbox"> Museos<br></div>
-                        </div>
-                    </article>
+<!--top place end-->
+<!--::gallery part start::-->
 
-        -->
-
-        </main>
-        <section id=separador1></section>
-        <section id=redes>
-            <div class="grid-redes">
-                <div class="redes-sociales" id=redesSociales>
-                    <h4>Mis redes sociales.</h4>
-                    <div id=Botones-redes>
-                        <ul>
-                            <li class="brandico-facebook-rect"> {{guia.facebook}}</li>
-                            <li class="brandico-instagram"> {{guia.instagram}}</li>
-                            <li class="brandico-twitter-bird"> {{guia.twitter}}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="Mis-tours" align="center">
-                    <a [routerLink]="['/tours/',guia.id]" class="mistours-boton fontawesome-suitcase"> Mis tours</a>
-
-                </div>
-            </div>
-        </section>
-
-
-    </section>
-    <!-- contenedor-->
-
-
-</body>
