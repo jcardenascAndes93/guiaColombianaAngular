@@ -1,35 +1,35 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
+    <meta charset="utf-8">
+    <title></title>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
 
 </head>
+<div id="login">
+    <form name='form-login'>
+        <h3>Actualizar datos</h3>
+        <span></span>
+        <input type="text" name="name" placeholder="Nombres" [(ngModel)]="user.first_name">
 
-<div id="updateUser">
-  <form name='form-update'>
-    <h3>Actualizacion de Datos</h3>
+        <span></span>
+        <input type="text" name="lastname" placeholder="Apellidos" [(ngModel)]="user.last_name">
 
-    <span></span>
-    <input type="text" id="name" placeholder="Nombres" [(ngModel)]="user.first_name" name="first">
+        <span></span>
+        <input type="text" name="email" placeholder="Email" [(ngModel)]="user.email" required>
 
-    <span></span>
-    <input type="text" id="lastname" placeholder="Apellidos" [(ngModel)]="user.last_name">
+        <span></span>
+        <input type="text" name="phone" placeholder="Teléfono" [(ngModel)]="user.phone">
 
-    <span></span>
-    <input type="text" name="email" placeholder="Email" [(ngModel)]="user.email">
+        <span></span>
+        <span></span>
+        <a routerLink="">
+            <button id="update" type="submit" (click)="updateUser()">Actualizar datos</button>
+        </a>
+        <a routerLink="">
+            <button id="cancel" type="submit">Cancelar</button>
+        </a>
 
-    <span></span>
-    <input type="text" id="phone" placeholder="Teléfono" [(ngModel)]="user.phone">
-
-    <span></span>
-    <span></span>
-    <button (click)="updateUser()">Actualizar datos</button>
-    <br>
-    <span></span>
-    <input type="submit" name="" value="Cancelar">
-
-  </form>
+    </form>
 </div>

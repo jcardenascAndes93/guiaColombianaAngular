@@ -19,9 +19,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  loginUser(){
+  loginUser() {
     this.userService.loginUser(this.login).subscribe(
       response => {
+        localStorage.setItem('usertoken', JSON.stringify(response.token));
+        localStorage.setItem('userid', JSON.stringify(response.id));
+        localStorage.setItem('userfname', JSON.stringify(response.fname));
+        localStorage.setItem('userlname', JSON.stringify(response.lname));
+        localStorage.setItem('useremail', JSON.stringify(response.email));
+        localStorage.setItem('userphone', JSON.stringify(response.phone));
         alert('Bienvenido ' + this.login.username);
       },
       error => {

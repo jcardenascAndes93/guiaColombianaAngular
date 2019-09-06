@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from '../users.service';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-modificar-datos',
@@ -13,18 +13,16 @@ export class ModificarDatosComponent implements OnInit {
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
-    // Initialize register object
+    // Initialize user object
     this.user = {
-      username: 'paola',
-      password: 'paola',
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
+      first_name: JSON.parse(localStorage.getItem('userfname')),
+      last_name: JSON.parse(localStorage.getItem('userlname')),
+      email: JSON.parse(localStorage.getItem('useremail')),
+      phone: JSON.parse(localStorage.getItem('userphone')),
     };
   }
 
-  // Register the user using the createUser service
+  // Update the user using the createUser service
   updateUser() {
     this.userService.updateUser(this.user).subscribe(
       response => {
