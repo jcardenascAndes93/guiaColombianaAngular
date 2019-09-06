@@ -28,7 +28,11 @@ export class ModificarDatosComponent implements OnInit {
   updateUser() {
     this.userService.updateUser(this.userUpdating).subscribe(
       response => {
-        alert('User ' + this.userUpdating.first_name+ ' upgrade success')
+        alert('Actualización correcta');
+        localStorage.setItem('userfname', this.userUpdating.first_name);
+        localStorage.setItem('userlname', this.userUpdating.last_name);
+        localStorage.setItem('useremail', this.userUpdating.email);
+        localStorage.setItem('userphone', this.userUpdating.phone);
       },
       error => console.log('ERROR: ', error)
     );

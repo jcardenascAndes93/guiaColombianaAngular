@@ -17,7 +17,8 @@ export class GuiaService {
 
   getGuias(): Observable<Guia[]> {
     this.guias = [];
-    this.httpClient.get('http://localhost:8000').subscribe((data: Array<any>) => {
+    //this.httpClient.get('http://localhost:8000').subscribe((data: Array<any>) => {
+    this.httpClient.get('https://guia-colombiana.herokuapp.com/').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let guia1 = new Guia();
         guia1.id = dataItem.pk;
@@ -43,7 +44,8 @@ export class GuiaService {
 
   getTours(idGuia: number): Observable<Tour[]> {
     this.tours = [];
-    this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
+    //this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
+    this.httpClient.get('https://guia-colombiana.herokuapp.com/api/tours/' + idGuia).subscribe((data: Array<any>) => {  
       data.forEach(dataItem => {
         let tour1 = new Tour();
         tour1.id = dataItem.pk;
