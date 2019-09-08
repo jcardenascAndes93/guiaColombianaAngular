@@ -9,13 +9,36 @@
       </div>
       <div class="col-lg-6">
         <div class="about_text">
-          <h5>{{guia.full_name}}</h5>
-          <h2>{{guia.frase}}.</h2>
-          <p>Facebook: {{guia.facebook}}</p>
-          <p>Instagram: {{guia.instagram}}</p>
-          <p>Twitter: {{guia.twitter}}</p>
+          <h2>{{guia.full_name}}</h2>
+          <h5>{{guia.frase}}.</h5>
+          <div class="categorias">
+            <div class="grid-categorias">
+                    <div class="grid-categoria"><img src="assets/img/cat/aire.png"><p>Aire libre</p></div>
+                    <div class="grid-categoria"><img src="assets/img/cat/Bares.PNG"><p>Bares</p></div>
+                    <div class="grid-categoria"><img src="assets/img/cat/bici.png"><p>En bicicleta</p></div>  
+                    <div class="grid-categoria"><img src="assets/img/cat/coche.png"><p>En coche</p></div>
+                    <div class="grid-categoria"><img src="assets/img/cat/compras.png"><p>Compras</p></div>
+                    <div class="grid-categoria"><img src="assets/img/cat/escoge.png"><p>Escoge tú</p></div>  
+                    <div class="grid-categoria"><img src="assets/img/cat/grupo.png"><p>Grupales</p></div>
+                    <div class="grid-categoria"><img src="assets/img/cat/museos.png"><p>Museos</p></div>
+                    <div class="grid-categoria"><img src="assets/img/cat/restaurantes.png"><p>Restaurantes</p></div>  
+            </div>
+
+    </div>
+    <div class="wrapper">	  	
+	  	<ul class="social-icons icon-circle icon-rotate list-unstyled list-inline"> 
+        <li><a [routerLink]="['/tours/',guia.id]" type="button" class="btn_1">Ver mis tours</a></li>
+	      <li> <a href="#"><i class="fa fa-facebook" title={{guia.facebook}}></i></a></li> 
+	      <li> <a href="#"><i class="fa fa-instagram" title={{guia.instagram}}></i></a></li> 
+	      <li> <a href="#"><i class="fa fa-twitter" title={{guia.twitter}}></i></a></li>  
+	  	</ul>  
+	  </div> 
+          <!--<p>Facebook:{{guia.facebook}}</p>
+          <p>Instagram:{{guia.instagram}}</p>
+          <p>Twitter:{{guia.instagram}}</p>-->
+          
           <br/>
-          <button [routerLink]="['/tours/',guia.id]" type="button" class="btn btn-outline-warning">Ver tours</button>
+          
         </div>
       </div>
     </div>
