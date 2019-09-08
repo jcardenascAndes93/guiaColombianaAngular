@@ -8,12 +8,13 @@ import {GuiaComponent} from "./guia/guia.component";
 import {TouresComponent} from "./toures/toures.component";
 import {ModificarDatosComponent} from './updateUser/modificar-datos.component';
 import { AuthTrackerService } from './auth-tracker.service';
+import { LoginConfirmService } from './login-confirm.service';
 
 
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent, canDeactivate:[LoginConfirmService]},
   {path: '', component: GuiasHomeComponent},
   {path: 'guiasdetalle/:id', component: GuiaComponent},
   {path: 'tours/:id', component: TouresComponent},
