@@ -86,21 +86,21 @@ after {
 
 #login form button[id="register"] {
     display: block;
-    background: white;
-    border: 1px solid #0c3e72;
+    background: #fe5c24;
+    border: 1px solid #fe5c24;
     margin: 0 auto;
     margin-bottom: 5px;
     width: 70%;
     height: 40px;
-    border-radius: 8px;
-    color: #0c3e72;
-    cursor: pointer;
+    border-radius: 0;
+    color: white;
     transition: background 0.5s ease-in-out;
     font-weight: bold
 }
 
 #login form button[id="register"]:hover {
-    background: #0c3e72;
+    background: #2493e0;
+    border: 1px solid #2493e0;
     color: white;
     font-weight: bold
 }
@@ -108,20 +108,20 @@ after {
 #login form button[id="cancel"] {
     display: block;
     background: white;
-    border: 1px solid #fe5c24;
+    border: 1px solid #e03232;
     margin: 0 auto;
     margin-bottom: 5px;
     width: 70%;
     height: 40px;
-    border-radius: 8px;
-    color: #fe5c24;
+    border-radius: 0;
+    color: #e03232;
     cursor: pointer;
     transition: background 0.5s ease-in-out;
     font-weight: bold
 }
 
 #login form button[id="cancel"]:hover {
-    background: #fe5c24;
+    background: #e03232;
     color: white;
     font-weight: bold
 }
