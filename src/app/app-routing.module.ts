@@ -7,6 +7,7 @@ import {GuiasHomeComponent} from "./guias-home/guias-home.component";
 import {GuiaComponent} from "./guia/guia.component";
 import {TouresComponent} from "./toures/toures.component";
 import {ModificarDatosComponent} from './updateUser/modificar-datos.component';
+import { AuthTrackerService } from './auth-tracker.service';
 
 
 
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path: '', component: GuiasHomeComponent},
   {path: 'guiasdetalle/:id', component: GuiaComponent},
   {path: 'tours/:id', component: TouresComponent},
-  {path: 'update', component: ModificarDatosComponent},
+  {path: 'update', component: ModificarDatosComponent, canActivate:[AuthTrackerService]},
 
 ];
 

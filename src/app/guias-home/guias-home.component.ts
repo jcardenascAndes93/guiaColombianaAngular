@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GuiaService} from '../guia.service';
+import { GuiaService } from '../guia.service';
 
 @Component({
   selector: 'app-guias-home',
@@ -8,10 +8,10 @@ import {GuiaService} from '../guia.service';
 })
 export class GuiasHomeComponent implements OnInit {
 
-   guias = [];
-   cities = [];
-   categories = [];
-   test = 1;
+  guias = [];
+  cities = [];
+  categories = [];
+  test = 1;
   constructor(private guiaService: GuiaService) {
 
   }
@@ -25,29 +25,29 @@ export class GuiasHomeComponent implements OnInit {
 
   }
 
-    getCategories(): void {
-      this.guiaService.getCategories()
-          .subscribe(categories => this.categories = categories);
-    }
+  getCategories(): void {
+    this.guiaService.getCategories()
+      .subscribe(categories => this.categories = categories);
+  }
 
   getGuias(): void {
-      this.guiaService.getGuias()
-          .subscribe(guias => this.guias = guias);
-    }
+    this.guiaService.getGuias()
+      .subscribe(guias => this.guias = guias);
+  }
 
-    getGuiasbyCategory(): void {
-      this.guiaService.getGuiasByCategory(1)
-          .subscribe(guias => this.guias = guias);
-    }
-    getGuiasbycity(): void {
-      this.guiaService.getGuiasByCiudad(this.test)
-          .subscribe(guias => this.guias = guias);
-    }
+  getGuiasbyCategory(): void {
+    this.guiaService.getGuiasByCategory(1)
+      .subscribe(guias => this.guias = guias);
+  }
+  getGuiasbycity(): void {
+    this.guiaService.getGuiasByCiudad(this.test)
+      .subscribe(guias => this.guias = guias);
+  }
 
-     getCities(): void {
-      this.guiaService.getCities()
-          .subscribe(ciudades => this.cities = ciudades);
-    }
+  getCities(): void {
+    this.guiaService.getCities()
+      .subscribe(ciudades => this.cities = ciudades);
+  }
 }
 
 
