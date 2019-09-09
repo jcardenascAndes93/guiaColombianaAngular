@@ -10,7 +10,8 @@ import { Ciudad, Category } from './ciudad';
   providedIn: 'root'
 })
 export class GuiaService {
-  API_URL = 'http://localhost:8000';
+  //base_url = 'http://127.0.0.1:8000';
+  base_url = 'https://guia-colombiana.herokuapp.com';
   private guias: Array<Guia> = [];
   private ciudades: Array<Ciudad> = [];
   private tours: Array<Tour> = [];
@@ -18,10 +19,9 @@ export class GuiaService {
 
   constructor(private httpClient: HttpClient) { }
 
-    getCities(): Observable<Ciudad[]>  {
+  getCities(): Observable<Ciudad[]> {
     this.ciudades = [];
-    // this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
-    this.httpClient.get('http://localhost:8000/api/getcities').subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/api/getcities').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let ciudad = new Ciudad();
         ciudad.id = dataItem.pk;
@@ -33,10 +33,9 @@ export class GuiaService {
     return of(this.ciudades);
   }
 
-      getCategories(): Observable<Category[]>  {
+  getCategories(): Observable<Category[]> {
     this.categories = [];
-    // this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
-    this.httpClient.get('http://localhost:8000/api/getcategories').subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/api/getcategories').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let category = new Category();
         category.id = dataItem.pk;
@@ -50,8 +49,7 @@ export class GuiaService {
 
   getGuias(): Observable<Guia[]> {
     this.guias = [];
-    //this.httpClient.get('http://localhost:8000').subscribe((data: Array<any>) => {
-    this.httpClient.get('https://guia-colombiana.herokuapp.com/').subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let guia1 = new Guia();
         guia1.id = dataItem.pk;
@@ -77,8 +75,7 @@ export class GuiaService {
 
   getTours(idGuia: number): Observable<Tour[]> {
     this.tours = [];
-    //this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
-    this.httpClient.get('https://guia-colombiana.herokuapp.com/api/tours/' + idGuia).subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/api/tours/' + idGuia).subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let tour1 = new Tour();
         tour1.id = dataItem.pk;
@@ -96,10 +93,9 @@ export class GuiaService {
     return of(this.tours);
   }
 
-   getGuiasByCiudad(idCiudad: number): Observable<Guia[]>  {
+  getGuiasByCiudad(idCiudad: number): Observable<Guia[]> {
     this.guias = [];
-    // this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
-    this.httpClient.get('http://localhost:8000/api/cityfilter/' + idCiudad).subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/api/cityfilter/' + idCiudad).subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let guia1 = new Guia();
         guia1.id = dataItem.pk;
@@ -119,10 +115,9 @@ export class GuiaService {
     return of(this.guias);
   }
 
-    getGuiasByCategory(idCategory: number): Observable<Guia[]>  {
+  getGuiasByCategory(idCategory: number): Observable<Guia[]> {
     this.guias = [];
-    // this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
-    this.httpClient.get('http://localhost:8000/api/categoryfilter/' + idCategory).subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/api/categoryfilter/' + idCategory).subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let guia1 = new Guia();
         guia1.id = dataItem.pk;

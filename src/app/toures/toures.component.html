@@ -1,33 +1,45 @@
 <app-header></app-header>
-<section class="hotel_list section_padding">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-6">
-        <div class="section_tittle text-center">
-          <h2>Bienvenido a Mis Toures</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div *ngFor="let tour of tours" class="col-lg-4 col-sm-6" >
-        <div class="single_ihotel_list">
-          <img src="assets/img/ind/industries_1.png" alt="">
-          <div class="hotel_text_iner">
-            <h3> <a href="#"> {{tour.name}}</a></h3>
-            <div class="place_review">
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href="#"><i class="fas fa-star"></i></a>
-              <a href="#"><i class="fas fa-star"></i></a>
-            </div>
-            <p>London, United Kingdom</p>
-            <h5>From <span>${{tour.price}} COP</span></h5>
-          </div>
-        </div>
-      </div>
 
+<section class="event_part section_padding">
+  <section class="event_part section_padding">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="owl-item active" style="width: 1140px; margin-right: 40px;"><div class="single_event_slider">
+                <div class="row justify-content-end">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Colombia&t=&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                            </iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                        </div>
+                        <style>
+                        .mapouter{position:relative;text-align:right;height:500px;width:500px;}
+                        .gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}
+                        </style>
+                    </div>
+                    <div class="ol-lg-6 col-md-6">
+                        <div class="event_slider_content">
+                            <h5>Tour #1</h5>
+                            <h2>Tour por el centro</h2>
+                            <p>Ciudad: <span>Bogotá</span></p>
+                            <p>Categoria: <span>Museos</span></p>
+                            <p>Precio: <span> $820</span> </p>
+                            <div>
+                                <ul style="list-style-type:none;">
+                                    <li><p>1. Plaza de bolivar.</p></li>
+                                </ul> 
+                            </div>
+                            <a href="#" class="btn_1 far fa-paper-plane "> Contactame</a>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
+</section>
+
+
 <app-footer></app-footer>

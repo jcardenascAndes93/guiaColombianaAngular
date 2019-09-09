@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { AuthTrackerService } from '../auth-tracker.service';
 
 @Component({
   selector: 'app-modificar-datos',
   templateUrl: './modificar-datos.component.html',
   styleUrls: ['./modificar-datos.component.css'],
-  providers: [UsersService]
+  providers: [UsersService, AuthTrackerService],
 })
 export class ModificarDatosComponent implements OnInit {
 
@@ -16,10 +17,10 @@ export class ModificarDatosComponent implements OnInit {
 
     // Initialize userUpdating object
     this.userUpdating = {
-      first_name: JSON.parse(localStorage.getItem('userfname')),
-      last_name: JSON.parse(localStorage.getItem('userlname')),
-      email: JSON.parse(localStorage.getItem('useremail')),
-      phone: JSON.parse(localStorage.getItem('userphone')),
+      first_name: (localStorage.getItem('userfname')),
+      last_name: (localStorage.getItem('userlname')),
+      email: (localStorage.getItem('useremail')),
+      phone: (localStorage.getItem('userphone')),
 
     };
   }

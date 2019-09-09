@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GuiaService} from '../guia.service';
+import { GuiaService } from '../guia.service';
 
 @Component({
   selector: 'app-guias-home',
@@ -14,6 +14,7 @@ export class GuiasHomeComponent implements OnInit {
    test = 1;
    category: { code: number };
    city: { code: number };
+
   constructor(private guiaService: GuiaService) {
 
   }
@@ -47,17 +48,18 @@ export class GuiasHomeComponent implements OnInit {
       }
     }
 
-    getCategories(): void {
-      this.guiaService.getCategories()
-          .subscribe(categories => this.categories = categories);
-    }
+  getCategories(): void {
+    this.guiaService.getCategories()
+      .subscribe(categories => this.categories = categories);
+  }
 
     getGuiasByCategoryCity(): void {
       this.guiaService.getGuiasByCategoryCity(this.category.code, this.city.code)
           .subscribe(guias => this.guias = guias);
     }
 
-  getGuias(): void {
+    getGuias(): void {
+
       this.guiaService.getGuias()
           .subscribe(guias => this.guias = guias);
     }
