@@ -140,7 +140,7 @@ export class GuiaService {
       getGuiasByCategoryCity(idCategory: number, idCity: number): Observable<Guia[]>  {
     this.guias = [];
     // this.httpClient.get('http://localhost:8000/api/tours/' + idGuia).subscribe((data: Array<any>) => {
-    this.httpClient.get('http://localhost:8000/api/categorycityfilter/' + idCategory + '/' + idCity + '').subscribe((data: Array<any>) => {
+    this.httpClient.get(this.base_url + '/api/categorycityfilter/' + idCategory + '/' + idCity + '').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let guia1 = new Guia();
         guia1.id = dataItem.pk;
