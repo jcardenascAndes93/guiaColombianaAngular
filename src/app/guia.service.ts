@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Guia } from './Guia';
+import {Guia, Place} from './Guia';
 import { Tour } from './tour';
 import { Ciudad, Category } from './ciudad';
 
@@ -16,6 +16,7 @@ export class GuiaService {
   private ciudades: Array<Ciudad> = [];
   private tours: Array<Tour> = [];
   private categories: Array<Category> = [];
+  private places: Array<Place> = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -36,6 +37,20 @@ export class GuiaService {
   getCategories(): Observable<Category[]> {
     this.categories = [];
     this.httpClient.get(this.base_url + '/api/getcategories').subscribe((data: Array<any>) => {
+      data.forEach(dataItem => {
+        let category = new Category();
+        category.id = dataItem.pk;
+        category.name = dataItem.fields.name;
+        this.categories.push(category);
+      });
+      console.log(data);
+    });
+    return of(this.categories);
+  }
+
+  getCategoriesByGuide(idCategory: number): Observable<Category[]> {
+    this.categories = [];
+    this.httpClient.get(this.base_url + '/api/categoriesbyguide/' + idCategory + '').subscribe((data: Array<any>) => {
       data.forEach(dataItem => {
         let category = new Category();
         category.id = dataItem.pk;
@@ -160,6 +175,20 @@ export class GuiaService {
     return of(this.guias);
   }
 
-
+  getPlaces(idTour: number): Observable<Place[]> {
+    this.tours = [];
+    this.httpClient.get('http://localhost:8000/api/tourplaces/' + idTour + '').subscribe((data: Array<any>) => {
+      data.forEach(dataItem => {
+        let place1 = new Place();
+        place1.id = dataItem.pk;
+        place1.name = dataItem.fields.name;
+        this.places.push(place1);
+      });
+      console.log(data);
+    });
+    return of(this.tours);
+  }
 
 }
+
+

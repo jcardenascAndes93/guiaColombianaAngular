@@ -12,6 +12,7 @@ import {Guia} from '../Guia';
 export class GuiaComponent implements OnInit {
 
 @Input() guia: Guia;
+categories = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,7 @@ export class GuiaComponent implements OnInit {
 
  ngOnInit(): void {
   this.getGuia();
+  this.getCategoriesByGuide();
 }
 
 getGuia(): void {
@@ -31,5 +33,10 @@ getGuia(): void {
 
 goBack(): void {
    this.location.back();
+}
+getCategoriesByGuide(): void {
+  const id = +this.route.snapshot.paramMap.get('id');
+  this.guiaService.getCategoriesByGuide(id)
+    .subscribe(categories => this.categories = categories);
 }
 }

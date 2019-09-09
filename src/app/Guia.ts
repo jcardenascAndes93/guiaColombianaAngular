@@ -10,3 +10,10 @@ export class Guia {
   instagram: string;
   city: number;
 }
+
+
+export class Place {
+  id: number;
+  // tslint:disable-next-line:variable-name
+  name: string;
+}

@@ -15,7 +15,7 @@ export class TouresComponent implements OnInit {
   constructor(
     private guiaService: GuiaService,
     private route: ActivatedRoute,
-    
+
   ) { }
 
   ngOnInit() {
@@ -26,5 +26,6 @@ export class TouresComponent implements OnInit {
     this.guiaService.getTours(id)
       .subscribe(tours => this.tours = tours);
   }
+
 
 }
