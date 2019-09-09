@@ -9,9 +9,9 @@
   </div>
 </section>
 <section class="booking_part">
+  <form name='form-searchform'>
   <div class="container">
     <div class="row">
-      >
       <div class="col-lg-12">
         <div class="booking_content">
           <div class="tab-content" id="myTabContent">
@@ -20,20 +20,21 @@
                 <form action="#">
                   <div class="form-row">
                     <div class="form_colum">
-                      <select class="nc_select">
-                        <option selected>Categoria</option>
-                        <option *ngFor="let category of categories">{{category.name}}</option>
+                      <select class="nc_select" [(ngModel)]="category.code" name="nc_select">
+                        <option selected [value]=0>Categoria
+                        </option>
+                        <option [value]="category.id"  *ngFor="let category of categories" selected >{{category.name}} </option>
                       </select>
                     </div>
                     <div class="form_colum">
-                      <select class="nc_select">
-                        <option selected>Ciudad</option>
-                        <option *ngFor="let city of cities">{{city.name}}</option>
+                      <select  [(ngModel)]="city.code" class="nc_select" name="nc_select1">
+                        <option selected [value]=0>Ciudad</option>
+                        <option [value]="city.id" *ngFor="let city of cities">{{city.name}}</option>
 
                       </select>
                     </div>
                     <div class="form_btn">
-                      <a  (click)="getGuiasbycity()" class="btn_1">Buscar</a>
+                      <a  (click)="filter()" class="btn_1">Buscar</a>
                     </div>
                   </div>
                 </form>
@@ -110,6 +111,7 @@
       </div>
     </div>
   </div>
+    </form>
 </section>
 <!-- Header part end-->
 <!--top place start-->

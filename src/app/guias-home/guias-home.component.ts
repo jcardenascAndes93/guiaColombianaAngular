@@ -12,11 +12,19 @@ export class GuiasHomeComponent implements OnInit {
    cities = [];
    categories = [];
    test = 1;
+   category: { code: number };
+   city: { code: number };
   constructor(private guiaService: GuiaService) {
 
   }
 
   ngOnInit() {
+    this.category = {
+      code: 0,
+    };
+    this.city = {
+      code: 0,
+    };
     this.getCities();
     this.getGuias();
     this.getCategories();
@@ -24,10 +32,29 @@ export class GuiasHomeComponent implements OnInit {
     // tslint:disable-next-line:no-unused-expression
 
   }
+      filter(): void {
+      if (this.category.code == 0 && this.city.code == 0){
+        this.getGuias();
+      }
+      if (this.category.code == 0 && this.city.code != 0){
+        this.getGuiasbycity();
+      }
+      if (this.category.code != 0 && this.city.code == 0){
+        this.getGuiasbyCategory();
+      }
+      if (this.category.code != 0 && this.city.code != 0){
+        this.getGuiasByCategoryCity();
+      }
+    }
 
     getCategories(): void {
       this.guiaService.getCategories()
           .subscribe(categories => this.categories = categories);
+    }
+
+    getGuiasByCategoryCity(): void {
+      this.guiaService.getGuiasByCategoryCity(this.category.code, this.city.code)
+          .subscribe(guias => this.guias = guias);
     }
 
   getGuias(): void {
@@ -36,11 +63,11 @@ export class GuiasHomeComponent implements OnInit {
     }
 
     getGuiasbyCategory(): void {
-      this.guiaService.getGuiasByCategory(1)
+      this.guiaService.getGuiasByCategory(this.category.code)
           .subscribe(guias => this.guias = guias);
     }
     getGuiasbycity(): void {
-      this.guiaService.getGuiasByCiudad(this.test)
+      this.guiaService.getGuiasByCiudad(this.city.code)
           .subscribe(guias => this.guias = guias);
     }
 
